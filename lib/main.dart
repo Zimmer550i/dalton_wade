@@ -1,9 +1,9 @@
 // ignore_for_file: no_leading_underscores_for_local_identifiers
 
+import 'package:dalton_wade/themes/light_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:dalton_wade/themes/dark_theme.dart';
 import 'package:dalton_wade/utils/app_constants.dart';
 import 'package:dalton_wade/utils/message.dart';
 import 'controllers/localization_controller.dart';
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
     return GetBuilder<ThemeController>(builder: (themeController) {
       return GetBuilder<LocalizationController>(builder: (localizeController) {
         return ScreenUtilInit(
-            designSize: const Size(393, 852),
+            designSize: const Size(335, 556),
             minTextAdapt: true,
             splitScreenMode: true,
             builder: (_, child) {
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
                 debugShowCheckedModeBanner: false,
                 navigatorKey: Get.key,
                 // theme: themeController.darkTheme ? dark(): light(),
-                theme: dark(),
+                theme: light(),
                 defaultTransition: Transition.topLevel,
                 locale: localizeController.locale,
                 translations: Messages(languages: languages),
@@ -45,8 +45,7 @@ class MyApp extends StatelessWidget {
                     AppConstants.languages[0].countryCode),
                 transitionDuration: const Duration(milliseconds: 500),
                 getPages: AppRoutes.page,
-                home: Placeholder(),
-                // initialRoute: AppRoutes.homeScreen,
+                initialRoute: AppRoutes.splash,
               );
             });
       });

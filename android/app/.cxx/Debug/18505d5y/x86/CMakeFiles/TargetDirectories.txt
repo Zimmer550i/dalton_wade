@@ -1,0 +1,2 @@
+C:/Projects/dalton_wade/android/app/.cxx/Debug/18505d5y/x86/CMakeFiles/edit_cache.dir
+C:/Projects/dalton_wade/android/app/.cxx/Debug/18505d5y/x86/CMakeFiles/rebuild_cache.dir

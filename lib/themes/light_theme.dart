@@ -2,4 +2,6 @@
 
 import 'package:flutter/material.dart';
 
-ThemeData light() => ThemeData();
+ThemeData light() => ThemeData(
+  fontFamily: "OpenSans"
+);

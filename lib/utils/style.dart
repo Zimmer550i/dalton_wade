@@ -25,6 +25,20 @@ class AppStyles {
     fontSize: 24,
   );
 
+  static TextStyle h05 = TextStyle(
+    fontFamily: "OpenSans",
+    fontWeight: FontWeight.w600,
+    color: AppColors.dark,
+    fontSize: 20,
+  );
+
+  static TextStyle h06 = TextStyle(
+    fontFamily: "OpenSans",
+    fontWeight: FontWeight.w600,
+    color: AppColors.dark,
+    fontSize: 18,
+  );
+
   static TextStyle body1 = TextStyle(
     fontFamily: "OpenSans",
     color: AppColors.textColor,
