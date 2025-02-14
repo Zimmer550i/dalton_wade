@@ -1,11 +1,9 @@
 import 'package:dalton_wade/helpers/route.dart';
 import 'package:dalton_wade/utils/app_colors.dart';
-import 'package:dalton_wade/utils/app_icons.dart';
 import 'package:dalton_wade/utils/style.dart';
 import 'package:dalton_wade/views/base/custom_button.dart';
 import 'package:dalton_wade/views/base/custom_text_field.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 class Login extends StatefulWidget {
@@ -123,6 +121,9 @@ class _LoginState extends State<Login> {
                 height: 24,
               ),
               CustomButton(
+                onTap: () {
+                  Get.toNamed(AppRoutes.app);
+                },
                 text: "Log In",
               ),
               const SizedBox(

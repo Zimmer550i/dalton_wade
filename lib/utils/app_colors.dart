@@ -16,10 +16,10 @@ class AppColors {
   static Color grey = const Color(0xff777777);
   static Color textColor = const Color(0xff101010);
 
-  static BoxShadow shadow = BoxShadow(
+  static List<BoxShadow> shadow = [BoxShadow(
     blurRadius: 15,
     spreadRadius: 0,
     color: Color.fromRGBO(16, 16, 26, 0.063),
     offset: const Offset(0, -4),
-  );
+  )];
 }
