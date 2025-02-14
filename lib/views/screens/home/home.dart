@@ -170,7 +170,8 @@ class Home extends StatelessWidget {
               color: Colors.white,
             ),
             Positioned(
-              top: 0,
+              top: -10,
+              bottom: 0,
               right: 0,
               child: Container(
                 height: 13,

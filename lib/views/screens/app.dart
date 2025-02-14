@@ -1,6 +1,8 @@
 import 'package:dalton_wade/views/base/custom_bottom_nav_bar.dart';
 import 'package:dalton_wade/views/screens/home/home.dart';
+import 'package:dalton_wade/views/screens/messages/messages.dart';
 import 'package:dalton_wade/views/screens/profile/profile.dart';
+import 'package:dalton_wade/views/screens/tools/tools.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatefulWidget {
@@ -20,9 +22,9 @@ class _AppState extends State<App> {
     super.initState();
     pages = [
       Profile(),
-      FlutterLogo(),
+      Tools(),
       Home(changeIndex: changeIndex),
-      FlutterLogo(),
+      Messages(),
       FlutterLogo(),
     ];
   }
