@@ -1,4 +1,3 @@
-import 'package:dalton_wade/helpers/route.dart';
 import 'package:dalton_wade/models/box_icon_data.dart';
 import 'package:dalton_wade/utils/app_colors.dart';
 import 'package:dalton_wade/utils/style.dart';
@@ -15,7 +14,7 @@ class BoxIcon extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         if (data.link != null) {
-          Get.toNamed(AppRoutes.myPlan);
+          Get.toNamed(data.link!);
         }
       },
       child: SizedBox(

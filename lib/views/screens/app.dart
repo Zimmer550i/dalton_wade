@@ -1,3 +1,4 @@
+import 'package:dalton_wade/utils/app_colors.dart';
 import 'package:dalton_wade/views/base/custom_bottom_nav_bar.dart';
 import 'package:dalton_wade/views/screens/home/home.dart';
 import 'package:dalton_wade/views/screens/messages/messages.dart';
@@ -41,6 +42,7 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(toolbarHeight: 0,backgroundColor: AppColors.secondary,),
       body: SafeArea(
         child: PageView(
           onPageChanged: (value) {

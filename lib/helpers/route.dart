@@ -5,6 +5,7 @@ import 'package:dalton_wade/views/screens/home/notifications.dart';
 import 'package:dalton_wade/views/screens/profile/checkout.dart';
 import 'package:dalton_wade/views/screens/profile/confirmation.dart';
 import 'package:dalton_wade/views/screens/profile/edit_profile.dart';
+import 'package:dalton_wade/views/screens/profile/favourite_trainings.dart';
 import 'package:dalton_wade/views/screens/profile/my_plan.dart';
 import 'package:dalton_wade/views/screens/profile/upgrade_plan.dart';
 import 'package:dalton_wade/views/screens/splash.dart';
@@ -21,6 +22,7 @@ class AppRoutes {
   static String checkout = '/checkout';
   static String confirmation = '/confirmation';
   static String myPlan = '/my_plan';
+  static String favouriteTrainings = "/favourite_trainings";
 
   static String notifications = '/notifications';
 
@@ -49,6 +51,7 @@ class AppRoutes {
       transitionDuration: const Duration(milliseconds: 300),
     ),
     GetPage(name: notifications, page: () => Notifications()),
+    GetPage(name: favouriteTrainings, page: () => FavouriteTrainings()),
     GetPage(name: forgetPassword, page: () => ForgetPassword()),
   ];
 }
