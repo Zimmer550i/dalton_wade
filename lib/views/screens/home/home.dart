@@ -1,9 +1,11 @@
+import 'package:dalton_wade/helpers/route.dart';
 import 'package:dalton_wade/utils/app_colors.dart';
 import 'package:dalton_wade/utils/app_icons.dart';
 import 'package:dalton_wade/utils/style.dart';
 import 'package:dalton_wade/views/base/svg.dart';
 import 'package:dalton_wade/views/base/user_avatar.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Home extends StatelessWidget {
   final Function(int)? changeIndex;
@@ -162,41 +164,46 @@ class Home extends StatelessWidget {
         child: UserAvatar(),
       ),
       actions: [
-        Stack(
-          alignment: Alignment.center,
-          children: [
-            Svg(
-              asset: AppIcons.notification,
-              color: Colors.white,
-            ),
-            Positioned(
-              top: -10,
-              bottom: 0,
-              right: 0,
-              child: Container(
-                height: 13,
-                width: 13,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.white,
-                  border: Border.all(
-                    width: 2,
-                    color: AppColors.secondary,
+        GestureDetector(
+          onTap: () {
+            Get.toNamed(AppRoutes.notifications);
+          },
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              Svg(
+                asset: AppIcons.notification,
+                color: Colors.white,
+              ),
+              Positioned(
+                top: -10,
+                bottom: 0,
+                right: 0,
+                child: Container(
+                  height: 13,
+                  width: 13,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+                    border: Border.all(
+                      width: 2,
+                      color: AppColors.secondary,
+                    ),
                   ),
-                ),
-                child: Center(
-                  child: Text(
-                    "1",
-                    style: TextStyle(
-                        fontWeight: FontWeight.w900,
-                        fontSize: 8,
-                        height: 0.5,
-                        color: AppColors.secondary),
+                  child: Center(
+                    child: Text(
+                      "1",
+                      style: TextStyle(
+                          fontWeight: FontWeight.w900,
+                          fontSize: 8,
+                          height: 0.5,
+                          color: AppColors.secondary),
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
         const SizedBox(width: 16),
         Svg(

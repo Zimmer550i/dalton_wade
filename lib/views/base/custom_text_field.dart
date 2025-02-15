@@ -9,12 +9,14 @@ class CustomTextField extends StatefulWidget {
   final TextEditingController? controller;
   final bool isObscured;
   final String? warningText;
+  final TextInputType? keyboardType;
   const CustomTextField({
     super.key,
     required this.label,
     this.controller,
     this.isObscured = false,
     this.warningText,
+    this.keyboardType,
   });
 
   @override
@@ -40,6 +42,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
               child: TextField(
                 style: AppStyles.body1Bold,
                 obscureText: hideText,
+                keyboardType: widget.keyboardType,
+                controller: widget.controller,
                 decoration: InputDecoration(
                   border: InputBorder.none,
                   label: Text(

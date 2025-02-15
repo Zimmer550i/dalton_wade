@@ -12,6 +12,11 @@ class Splash extends StatelessWidget {
   Widget build(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback(
       (timeStamp) {
+        precacheImage(AssetImage('assets/images/bg.jpg'), context);
+        precacheImage(AssetImage('assets/images/card_image.png'), context);
+        precacheImage(AssetImage('assets/images/user.png'), context);
+        precacheImage(AssetImage('assets/images/logo_white.png'), context);
+        
         Timer(const Duration(seconds: 1), () {
           Get.offAllNamed(AppRoutes.login);
         });

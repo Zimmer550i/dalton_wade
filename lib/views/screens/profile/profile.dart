@@ -1,3 +1,4 @@
+import 'package:dalton_wade/helpers/route.dart';
 import 'package:dalton_wade/models/box_icon_data.dart';
 import 'package:dalton_wade/utils/app_colors.dart';
 import 'package:dalton_wade/utils/app_icons.dart';
@@ -6,6 +7,7 @@ import 'package:dalton_wade/views/base/box_icon.dart';
 import 'package:dalton_wade/views/base/svg.dart';
 import 'package:dalton_wade/views/base/user_avatar.dart';
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -13,7 +15,11 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var data = [
-      BoxIconData(assetPath: AppIcons.team, label: "My Plan"),
+      BoxIconData(
+        assetPath: AppIcons.team,
+        label: "My Plan",
+        link: AppRoutes.myPlan,
+      ),
       BoxIconData(assetPath: AppIcons.traning, label: "Favourite Tranings"),
       BoxIconData(assetPath: AppIcons.messges, label: "View Messages"),
       BoxIconData(
@@ -66,12 +72,17 @@ class Profile extends StatelessWidget {
           ],
         ),
         actions: [
-          Container(
-            height: 40,
-            width: 40,
-            color: Colors.white.withAlpha((255 * 0.4).toInt()),
-            child: Svg(
-              asset: AppIcons.editProfile,
+          GestureDetector(
+            onTap: () {
+              Get.toNamed(AppRoutes.editProfile);
+            },
+            child: Container(
+              height: 40,
+              width: 40,
+              color: Colors.white.withAlpha((255 * 0.4).toInt()),
+              child: Svg(
+                asset: AppIcons.editProfile,
+              ),
             ),
           ),
           const SizedBox(
@@ -98,9 +109,7 @@ class Profile extends StatelessWidget {
             ),
             child: GridView.builder(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: 1.1
-              ),
+                  crossAxisCount: 2, childAspectRatio: 1.1),
               itemCount: data.length,
               itemBuilder: (context, index) {
                 return BoxIcon(data: data[index]);
