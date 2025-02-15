@@ -39,12 +39,20 @@ class AppStyles {
     fontSize: 18,
   );
 
+  static TextStyle h07 = TextStyle(
+    fontFamily: "PlayfairDisplay",
+    fontWeight: FontWeight.w700,
+    fontStyle: FontStyle.italic,
+    fontSize: 24,
+  );
+  // static TextStyle h07 = h02.copyWith(fontSize: 24);
+
   static TextStyle body1 = TextStyle(
     fontFamily: "OpenSans",
     color: AppColors.textColor,
     fontSize: 16,
   );
-  
+
   static TextStyle body1Bold = TextStyle(
     fontFamily: "OpenSans",
     fontWeight: FontWeight.w600,

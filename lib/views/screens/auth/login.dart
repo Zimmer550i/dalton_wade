@@ -106,7 +106,7 @@ class _LoginState extends State<Login> {
                   const Spacer(),
                   GestureDetector(
                     onTap: () {
-                      Get.toNamed(AppRoutes.forgetPassword);
+                      Get.offAllNamed(AppRoutes.forgetPassword);
                     },
                     child: Text(
                       "Forget Password?",
