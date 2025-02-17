@@ -13,6 +13,7 @@ import 'package:dalton_wade/views/screens/profile/upgrade_plan.dart';
 import 'package:dalton_wade/views/screens/settings/change_password.dart';
 import 'package:dalton_wade/views/screens/settings/feedback.dart';
 import 'package:dalton_wade/views/screens/splash.dart';
+import 'package:dalton_wade/views/screens/tools/knowledge_guide.dart';
 import 'package:dalton_wade/views/screens/tools/support.dart';
 import 'package:dalton_wade/views/screens/tools/template_page.dart';
 import 'package:dalton_wade/views/screens/tools/training_sessions.dart';
@@ -33,6 +34,7 @@ class AppRoutes {
 
   static String trainingSessions = "/training_sessions";
   static String support = '/support';
+  static String knowledgeGuide = '/knowledge_guide';
   static String turnerTitle = '/turnerTitle';
   static String pioneerMortgage = '/pioneer_mortgage';
   static String miMitualMortgage = '/mi_mutual_mortgage';
@@ -83,6 +85,7 @@ class AppRoutes {
     GetPage(name: favouriteTrainings, page: () => FavouriteTrainings()),
     GetPage(name: forgetPassword, page: () => ForgetPassword()),
     GetPage(name: support, page: () => Support()),
+    GetPage(name: knowledgeGuide, page: () => KnowledgeGuide()),
     GetPage(
       name: turnerTitle,
       page: () => TemplatePage(

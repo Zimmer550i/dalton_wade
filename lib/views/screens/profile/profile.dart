@@ -86,6 +86,7 @@ class Profile extends StatelessWidget {
               color: Colors.white.withAlpha((255 * 0.4).toInt()),
               child: Svg(
                 asset: AppIcons.editProfile,
+                color: Colors.white,
               ),
             ),
           ),

@@ -4,6 +4,7 @@ import 'package:dalton_wade/utils/style.dart';
 import 'package:dalton_wade/views/base/svg.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class BoxIcon extends StatelessWidget {
   final BoxIconData data;
@@ -14,10 +15,10 @@ class BoxIcon extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         if (data.link != null) {
-          if(data.link!.startsWith("/")) {
+          if (data.link!.startsWith("/")) {
             Get.toNamed(data.link!);
-          }else{
-            
+          } else {
+            launchUrl(Uri.parse(data.link!));
           }
         }
       },

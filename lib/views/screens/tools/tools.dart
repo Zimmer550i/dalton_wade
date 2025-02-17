@@ -24,6 +24,12 @@ class Tools extends StatelessWidget {
       ),
       BoxIconData(
         assetPath: AppIcons.team,
+        label: "BoldTrail",
+      ),
+      BoxIconData(
+          assetPath: AppIcons.team, label: "Dotloop", link: "https://www.dotloop.com/"),
+      BoxIconData(
+        assetPath: AppIcons.team,
         label: "Turner Title",
         link: AppRoutes.turnerTitle,
       ),
@@ -31,6 +37,14 @@ class Tools extends StatelessWidget {
         assetPath: AppIcons.team,
         label: "Pioneer Mortgage Funding Inc.",
         link: AppRoutes.pioneerMortgage,
+      ),
+      BoxIconData(
+        assetPath: AppIcons.team,
+        label: "FSBOs",
+      ),
+      BoxIconData(
+        assetPath: AppIcons.team,
+        label: "Open House List",
       ),
       BoxIconData(
         assetPath: AppIcons.team,
@@ -70,7 +84,10 @@ class Tools extends StatelessWidget {
             ),
             child: GridView.builder(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, childAspectRatio: 1.1),
+                crossAxisCount: 2,
+                childAspectRatio: 1.1,
+              ),
+              shrinkWrap: true,
               itemCount: data.length,
               itemBuilder: (context, index) {
                 return BoxIcon(data: data[index]);

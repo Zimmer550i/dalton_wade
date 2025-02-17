@@ -1,3 +1,4 @@
+import 'package:dalton_wade/helpers/route.dart';
 import 'package:dalton_wade/models/box_icon_data.dart';
 import 'package:dalton_wade/utils/app_colors.dart';
 import 'package:dalton_wade/utils/app_icons.dart';
@@ -19,6 +20,7 @@ class Support extends StatelessWidget {
       BoxIconData(
         assetPath: AppIcons.idea,
         label: "Visit Knowledge Guide",
+        link: AppRoutes.knowledgeGuide,
       ),
       BoxIconData(
         assetPath: AppIcons.call,
