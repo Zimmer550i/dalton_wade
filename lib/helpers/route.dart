@@ -4,6 +4,7 @@ import 'package:dalton_wade/views/screens/app.dart';
 import 'package:dalton_wade/views/screens/auth/forget_password.dart';
 import 'package:dalton_wade/views/screens/auth/login.dart';
 import 'package:dalton_wade/views/screens/home/notifications.dart';
+import 'package:dalton_wade/views/screens/messages/inbox.dart';
 import 'package:dalton_wade/views/screens/profile/checkout.dart';
 import 'package:dalton_wade/views/screens/profile/confirmation.dart';
 import 'package:dalton_wade/views/screens/profile/edit_profile.dart';
@@ -41,6 +42,8 @@ class AppRoutes {
 
   static String notifications = '/notifications';
 
+  static String inbox = '/inbox';
+
   static String changePassword = '/change_password';
   static String feedback = '/feedback';
 
@@ -49,6 +52,7 @@ class AppRoutes {
     GetPage(name: login, page: () => Login()),
     GetPage(name: splash, page: () => Splash()),
     GetPage(name: myPlan, page: () => MyPlan()),
+    GetPage(name: inbox, page: () => Inbox()),
     GetPage(
       name: checkout,
       page: () => Checkout(),

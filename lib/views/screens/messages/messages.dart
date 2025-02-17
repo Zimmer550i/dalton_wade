@@ -1,3 +1,4 @@
+import 'package:dalton_wade/helpers/route.dart';
 import 'package:dalton_wade/models/box_icon_data.dart';
 import 'package:dalton_wade/utils/app_colors.dart';
 import 'package:dalton_wade/utils/app_icons.dart';
@@ -10,10 +11,14 @@ class Messages extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     var data = [
-      BoxIconData(assetPath: AppIcons.messges, label: "View Messages"),
-      BoxIconData(assetPath: AppIcons.contact, label: "Agents List"),];
+      BoxIconData(
+        assetPath: AppIcons.messges,
+        label: "View Messages",
+        link: AppRoutes.inbox,
+      ),
+      BoxIconData(assetPath: AppIcons.contact, label: "Agents List"),
+    ];
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 72,
