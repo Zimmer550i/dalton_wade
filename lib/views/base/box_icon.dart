@@ -14,7 +14,11 @@ class BoxIcon extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         if (data.link != null) {
-          Get.toNamed(data.link!);
+          if(data.link!.startsWith("/")) {
+            Get.toNamed(data.link!);
+          }else{
+            
+          }
         }
       },
       child: SizedBox(
@@ -36,11 +40,14 @@ class BoxIcon extends StatelessWidget {
             const SizedBox(
               height: 8,
             ),
-            Text(
-              data.label,
-              textAlign: TextAlign.center,
-              style: AppStyles.body2Bold.copyWith(
-                color: AppColors.dark,
+            SizedBox(
+              width: 124,
+              child: Text(
+                data.label,
+                textAlign: TextAlign.center,
+                style: AppStyles.body2Bold.copyWith(
+                  color: AppColors.dark,
+                ),
               ),
             ),
           ],

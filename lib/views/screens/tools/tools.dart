@@ -1,3 +1,4 @@
+import 'package:dalton_wade/helpers/route.dart';
 import 'package:dalton_wade/models/box_icon_data.dart';
 import 'package:dalton_wade/utils/app_colors.dart';
 import 'package:dalton_wade/utils/app_icons.dart';
@@ -11,11 +12,31 @@ class Tools extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var data = [
-      BoxIconData(assetPath: AppIcons.traning, label: "Tranings"),
-      BoxIconData(assetPath: AppIcons.getSupport, label: "Get Support"),
-      BoxIconData(assetPath: AppIcons.messges, label: "View Messages"),
       BoxIconData(
-          assetPath: AppIcons.commissionPayments, label: "Commission Payments"),
+        assetPath: AppIcons.traning,
+        label: "Tranings",
+        link: AppRoutes.trainingSessions,
+      ),
+      BoxIconData(
+        assetPath: AppIcons.getSupport,
+        label: "Get Support",
+        link: AppRoutes.support,
+      ),
+      BoxIconData(
+        assetPath: AppIcons.team,
+        label: "Turner Title",
+        link: AppRoutes.turnerTitle,
+      ),
+      BoxIconData(
+        assetPath: AppIcons.team,
+        label: "Pioneer Mortgage Funding Inc.",
+        link: AppRoutes.pioneerMortgage,
+      ),
+      BoxIconData(
+        assetPath: AppIcons.team,
+        label: "MiMutual Mortgage",
+        link: AppRoutes.miMitualMortgage,
+      ),
     ];
     return Scaffold(
       appBar: AppBar(
