@@ -1,3 +1,4 @@
+import 'package:dalton_wade/helpers/route.dart';
 import 'package:dalton_wade/utils/app_colors.dart';
 import 'package:dalton_wade/utils/app_icons.dart';
 import 'package:dalton_wade/utils/style.dart';
@@ -45,8 +46,16 @@ class Settings extends StatelessWidget {
                   AppIcons.pushNotification,
                   switchCallback: (val) {},
                 ),
-                settingOptions("Change Password", AppIcons.key),
-                settingOptions("Send Feedback About App", AppIcons.feedback),
+                settingOptions(
+                  "Change Password",
+                  AppIcons.key,
+                  nextRoute: AppRoutes.changePassword,
+                ),
+                settingOptions(
+                  "Send Feedback About App",
+                  AppIcons.feedback,
+                  nextRoute: AppRoutes.feedback,
+                ),
               ],
             ),
             section(
@@ -103,7 +112,7 @@ class Settings extends StatelessWidget {
     String? subTitle,
     Function(bool)? switchCallback,
   }) {
-    return GestureDetector(
+    return InkWell(
       onTap: () {
         if (nextRoute != null) {
           try {

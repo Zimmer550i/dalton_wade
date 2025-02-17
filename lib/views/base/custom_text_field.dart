@@ -10,6 +10,7 @@ class CustomTextField extends StatefulWidget {
   final bool isObscured;
   final String? warningText;
   final TextInputType? keyboardType;
+  final int? maxline;
   const CustomTextField({
     super.key,
     required this.label,
@@ -17,6 +18,7 @@ class CustomTextField extends StatefulWidget {
     this.isObscured = false,
     this.warningText,
     this.keyboardType,
+    this.maxline,
   });
 
   @override
@@ -40,12 +42,14 @@ class _CustomTextFieldState extends State<CustomTextField> {
           children: [
             Expanded(
               child: TextField(
+                maxLines: widget.maxline ?? 1,
                 style: AppStyles.body1Bold,
                 obscureText: hideText,
                 keyboardType: widget.keyboardType,
                 controller: widget.controller,
                 decoration: InputDecoration(
                   border: InputBorder.none,
+                  alignLabelWithHint: true,
                   label: Text(
                     widget.label,
                     style: AppStyles.body1.copyWith(
@@ -78,10 +82,13 @@ class _CustomTextFieldState extends State<CustomTextField> {
           color: AppColors.third,
         ),
         if (widget.warningText != null)
-          Text(
-            widget.warningText!,
-            style: AppStyles.small.copyWith(
-              color: AppColors.third,
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              widget.warningText!,
+              style: AppStyles.small.copyWith(
+                color: AppColors.third,
+              ),
             ),
           ),
       ],

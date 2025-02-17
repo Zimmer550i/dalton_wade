@@ -8,6 +8,8 @@ import 'package:dalton_wade/views/screens/profile/edit_profile.dart';
 import 'package:dalton_wade/views/screens/profile/favourite_trainings.dart';
 import 'package:dalton_wade/views/screens/profile/my_plan.dart';
 import 'package:dalton_wade/views/screens/profile/upgrade_plan.dart';
+import 'package:dalton_wade/views/screens/settings/change_password.dart';
+import 'package:dalton_wade/views/screens/settings/feedback.dart';
 import 'package:dalton_wade/views/screens/splash.dart';
 import 'package:get/get.dart';
 
@@ -25,6 +27,9 @@ class AppRoutes {
   static String favouriteTrainings = "/favourite_trainings";
 
   static String notifications = '/notifications';
+
+  static String changePassword = '/change_password';
+  static String feedback = '/feedback';
 
   static List<GetPage> page = [
     GetPage(name: app, page: () => App()),
@@ -47,6 +52,18 @@ class AppRoutes {
     GetPage(
       name: confirmation,
       page: () => Confirmation(),
+      transition: Transition.cupertino,
+      transitionDuration: const Duration(milliseconds: 300),
+    ),
+    GetPage(
+      name: changePassword,
+      page: () => ChangePassword(),
+      transition: Transition.cupertino,
+      transitionDuration: const Duration(milliseconds: 300),
+    ),
+    GetPage(
+      name: feedback,
+      page: () => Feedback(),
       transition: Transition.cupertino,
       transitionDuration: const Duration(milliseconds: 300),
     ),
