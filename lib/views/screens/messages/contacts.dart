@@ -3,7 +3,9 @@ import 'package:dalton_wade/utils/app_icons.dart';
 import 'package:dalton_wade/utils/style.dart';
 import 'package:dalton_wade/views/base/custom_app_bar.dart';
 import 'package:dalton_wade/views/base/svg.dart';
+import 'package:dalton_wade/views/screens/messages/contact_details.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Contacts extends StatefulWidget {
   const Contacts({super.key});
@@ -217,49 +219,54 @@ class _ContactsState extends State<Contacts> {
       }
 
       rtn.add(
-        Container(
-          height: 80,
-          decoration: BoxDecoration(
-            border: Border(
-              bottom: BorderSide(
-                color: Color(0xffcccccc),
-              ),
-            ),
-          ),
-          child: Row(
-            children: [
-              ClipOval(
-                child: Image.asset(
-                  current.assetLink,
-                  height: 48,
-                  width: 48,
+        InkWell(
+          onTap: () {
+            Get.to(ContactDetails());
+          },
+          child: Container(
+            height: 80,
+            decoration: BoxDecoration(
+              border: Border(
+                bottom: BorderSide(
+                  color: Color(0xffcccccc),
                 ),
               ),
-              const SizedBox(
-                width: 12,
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                spacing: 4,
-                children: [
-                  Text(
-                    current.name,
-                    style: AppStyles.body1Bold.copyWith(
-                      color: AppColors.dark,
-                    ),
+            ),
+            child: Row(
+              children: [
+                ClipOval(
+                  child: Image.asset(
+                    current.assetLink,
+                    height: 48,
+                    width: 48,
                   ),
-                  Text(
-                    current.phone,
-                    style: AppStyles.body2.copyWith(
-                      color: Color(
-                        0xff777777,
+                ),
+                const SizedBox(
+                  width: 12,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  spacing: 4,
+                  children: [
+                    Text(
+                      current.name,
+                      style: AppStyles.body1Bold.copyWith(
+                        color: AppColors.dark,
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ],
+                    Text(
+                      current.phone,
+                      style: AppStyles.body2.copyWith(
+                        color: Color(
+                          0xff777777,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       );

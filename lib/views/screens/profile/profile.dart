@@ -25,7 +25,11 @@ class Profile extends StatelessWidget {
         label: "Favourite Tranings",
         link: AppRoutes.favouriteTrainings,
       ),
-      BoxIconData(assetPath: AppIcons.messges, label: "View Messages"),
+      BoxIconData(
+        assetPath: AppIcons.messges,
+        label: "View Messages",
+        link: AppRoutes.inbox,
+      ),
       BoxIconData(
           assetPath: AppIcons.commissionPayments, label: "Commission Payments"),
     ];

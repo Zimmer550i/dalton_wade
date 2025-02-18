@@ -4,6 +4,8 @@ import 'package:dalton_wade/views/screens/app.dart';
 import 'package:dalton_wade/views/screens/auth/forget_password.dart';
 import 'package:dalton_wade/views/screens/auth/login.dart';
 import 'package:dalton_wade/views/screens/home/notifications.dart';
+import 'package:dalton_wade/views/screens/messages/chat.dart';
+import 'package:dalton_wade/views/screens/messages/contact_details.dart';
 import 'package:dalton_wade/views/screens/messages/contacts.dart';
 import 'package:dalton_wade/views/screens/messages/inbox.dart';
 import 'package:dalton_wade/views/screens/profile/checkout.dart';
@@ -44,7 +46,9 @@ class AppRoutes {
   static String notifications = '/notifications';
 
   static String inbox = '/inbox';
+  static String chat = '/chat';
   static String contacts = '/contacts';
+  static String viewContact = '/view_contact';
 
   static String changePassword = '/change_password';
   static String feedback = '/feedback';
@@ -55,7 +59,9 @@ class AppRoutes {
     GetPage(name: splash, page: () => Splash()),
     GetPage(name: myPlan, page: () => MyPlan()),
     GetPage(name: inbox, page: () => Inbox()),
+    GetPage(name: chat, page: () => Chat()),
     GetPage(name: contacts, page: () => Contacts()),
+    GetPage(name: viewContact, page: () => ContactDetails()),
     GetPage(
       name: checkout,
       page: () => Checkout(),
@@ -103,10 +109,12 @@ class AppRoutes {
           BoxIconData(
             assetPath: AppIcons.call,
             label: "Call",
+            link: "tel:+1800229933",
           ),
           BoxIconData(
             assetPath: AppIcons.email,
             label: "Email",
+            link: "mailto:wasiul0491@gmail.com",
           ),
           BoxIconData(
             assetPath: AppIcons.website,
@@ -129,10 +137,12 @@ class AppRoutes {
           BoxIconData(
             assetPath: AppIcons.call,
             label: "Call",
+            link: "tel:+1800229933",
           ),
           BoxIconData(
             assetPath: AppIcons.email,
             label: "Email",
+            link: "mailto:wasiul0491@gmail.com",
           ),
           BoxIconData(
             assetPath: AppIcons.website,
@@ -151,10 +161,12 @@ class AppRoutes {
           BoxIconData(
             assetPath: AppIcons.call,
             label: "Call",
+            link: "tel:+1800229933",
           ),
           BoxIconData(
             assetPath: AppIcons.email,
             label: "Email",
+            link: "mailto:wasiul0491@gmail.com",
           ),
           BoxIconData(
             assetPath: AppIcons.website,

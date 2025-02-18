@@ -20,6 +20,24 @@ class BoxIcon extends StatelessWidget {
           } else {
             launchUrl(Uri.parse(data.link!));
           }
+        } else {
+          ScaffoldMessenger.of(context).hideCurrentSnackBar();
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(
+                'No function has been attached to this "${data.label}" button.',
+                style: AppStyles.smallBold.copyWith(
+                  color: Colors.white,
+                ),
+              ),
+              backgroundColor: const Color(0xffD34A39),
+              behavior: SnackBarBehavior.floating,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              elevation: 10,
+            ),
+          );
         }
       },
       child: SizedBox(
