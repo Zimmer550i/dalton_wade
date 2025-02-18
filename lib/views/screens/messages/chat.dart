@@ -98,6 +98,7 @@ class _ChatState extends State<Chat> {
                               timeStamp: DateTime.now(),
                             ),
                           );
+                          messageController.clear();
                         });
                       },
                       child: Svg(

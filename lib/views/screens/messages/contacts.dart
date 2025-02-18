@@ -21,6 +21,9 @@ class _ContactsState extends State<Contacts> {
   late List<Contact> data;
   late List<Widget> contacts;
 
+  double fingerStart = 0;
+  double fingerTravel = 0;
+
   @override
   void initState() {
     super.initState();
@@ -53,8 +56,8 @@ class _ContactsState extends State<Contacts> {
     return Scaffold(
       appBar: CustomAppBar(),
       body: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: 20,
+        padding: EdgeInsets.only(
+          left: 20,
         ),
         child: Column(
           children: [
@@ -84,6 +87,9 @@ class _ContactsState extends State<Contacts> {
                       asset: AppIcons.search,
                     ),
                   ),
+                  const SizedBox(
+                    width: 20,
+                  ),
                 ],
               ),
             ),
@@ -105,44 +111,50 @@ class _ContactsState extends State<Contacts> {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    width: 20,
-                  ),
                   SizedBox(
-                    width: 15,
+                    width: 55,
                     child: SafeArea(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           for (int i = 65; i <= 90; i++)
                             positions.keys.contains(String.fromCharCode(i))
-                                ? GestureDetector(
-                                    behavior: HitTestBehavior.translucent,
-                                    onTap: () {
-                                      if (positions.containsKey(
-                                          String.fromCharCode(i))) {
-                                        controller.animateTo(
-                                          positions[String.fromCharCode(i)]!
-                                              .toDouble(),
-                                          duration: const Duration(
-                                            milliseconds: 300,
+                                ? Expanded(
+                                    child: GestureDetector(
+                                      behavior: HitTestBehavior.translucent,
+                                      onTap: () {
+                                        if (positions.containsKey(
+                                            String.fromCharCode(i))) {
+                                          controller.animateTo(
+                                            positions[
+                                                    String.fromCharCode(i)]!
+                                                .toDouble(),
+                                            duration: const Duration(
+                                              milliseconds: 300,
+                                            ),
+                                            curve: Curves.fastOutSlowIn,
+                                          );
+                                        }
+                                      },
+                                      child: SizedBox(
+                                        width: 55,
+                                        child: Center(
+                                          child: Text(
+                                            String.fromCharCode(i),
+                                            style: TextStyle(
+                                              fontFamily: "OpenSans",
+                                              fontSize:
+                                                  index == i ? 22 : 14,
+                                              fontWeight: index == i
+                                                  ? FontWeight.bold
+                                                  : FontWeight.w400,
+                                              color: index == i
+                                                  ? AppColors.primary
+                                                  : Color(0xff777777),
+                                            ),
                                           ),
-                                          curve: Curves.fastOutSlowIn,
-                                        );
-                                      }
-                                    },
-                                    child: Text(
-                                      String.fromCharCode(i),
-                                      style: TextStyle(
-                                        fontFamily: "OpenSans",
-                                        fontSize: index == i ? 22 : 14,
-                                        fontWeight: index == i
-                                            ? FontWeight.bold
-                                            : FontWeight.w400,
-                                        color: index == i
-                                            ? AppColors.primary
-                                            : Color(0xff777777),
+                                        ),
                                       ),
                                     ),
                                   )
@@ -287,8 +299,6 @@ class _ContactsState extends State<Contacts> {
         Contact("Candace Jackson", "456-789 012", "assets/images/faces/6.png"),
         Contact("Derek Lawrence", "567-890 123", "assets/images/faces/8.png"),
         Contact("Jason Parker", "678-901 234", "assets/images/faces/1.png"),
-
-        // 10 New Added Contacts
         Contact("Alice Spencer", "234-567 890", "assets/images/faces/3.png"),
         Contact("Chris Martin", "345-678 901", "assets/images/faces/6.png"),
         Contact("Diana Wells", "456-789 012", "assets/images/faces/2.png"),
@@ -299,8 +309,6 @@ class _ContactsState extends State<Contacts> {
         Contact("Jasmine Carter", "901-234 567", "assets/images/faces/10.png"),
         Contact("Kyle Anderson", "012-345 678", "assets/images/faces/1.png"),
         Contact("Laura Simmons", "123-456 789", "assets/images/faces/9.png"),
-
-        // Additional 50 new contacts with asset links between 1.png to 10.png
         Contact("Michael Harris", "223-567 890", "assets/images/faces/2.png"),
         Contact("Nancy Fisher", "334-678 901", "assets/images/faces/6.png"),
         Contact("Oscar Green", "445-789 012", "assets/images/faces/8.png"),
