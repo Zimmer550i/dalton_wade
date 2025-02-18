@@ -17,7 +17,11 @@ class Messages extends StatelessWidget {
         label: "View Messages",
         link: AppRoutes.inbox,
       ),
-      BoxIconData(assetPath: AppIcons.contact, label: "Agents List"),
+      BoxIconData(
+        assetPath: AppIcons.contact,
+        label: "Agents List",
+        link: AppRoutes.contacts,
+      ),
     ];
     return Scaffold(
       appBar: AppBar(

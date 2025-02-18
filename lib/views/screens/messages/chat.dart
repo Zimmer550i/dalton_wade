@@ -5,30 +5,37 @@ import 'package:dalton_wade/views/base/custom_app_bar.dart';
 import 'package:dalton_wade/views/base/svg.dart';
 import 'package:flutter/material.dart';
 
-class Chat extends StatelessWidget {
+class Chat extends StatefulWidget {
   const Chat({super.key});
 
   @override
+  State<Chat> createState() => _ChatState();
+}
+
+class _ChatState extends State<Chat> {
+  final messageController = TextEditingController();
+  List<Message> data = [
+    Message(
+      text:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      timeStamp: DateTime(DateTime.now().year, DateTime.now().month,
+          DateTime.now().day, 10, 45),
+      isSent: false,
+    ),
+    Message(
+      text: "Lorem Ipsum is",
+      timeStamp: DateTime(DateTime.now().year, DateTime.now().month,
+          DateTime.now().day, 11, 45),
+    ),
+    Message(
+      text: "Lorem Ipsum is simply dummy",
+      timeStamp: DateTime(DateTime.now().year, DateTime.now().month,
+          DateTime.now().day, 11, 45),
+    ),
+  ];
+
+  @override
   Widget build(BuildContext context) {
-    List<Message> data = [
-      Message(
-        text:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        timeStamp: DateTime(DateTime.now().year, DateTime.now().month,
-            DateTime.now().day, 10, 45),
-        isSent: false,
-      ),
-      Message(
-        text: "Lorem Ipsum is",
-        timeStamp: DateTime(DateTime.now().year, DateTime.now().month,
-            DateTime.now().day, 11, 45),
-      ),
-      Message(
-        text: "Lorem Ipsum is simply dummy",
-        timeStamp: DateTime(DateTime.now().year, DateTime.now().month,
-            DateTime.now().day, 11, 45),
-      ),
-    ];
     return Scaffold(
       appBar: CustomAppBar(),
       body: Padding(
@@ -71,6 +78,7 @@ class Chat extends StatelessWidget {
                   children: [
                     Expanded(
                       child: TextField(
+                        controller: messageController,
                         decoration: InputDecoration(
                           border: InputBorder.none,
                           hintText: "Write your messages here..",
@@ -80,11 +88,24 @@ class Chat extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Svg(
-                      asset: AppIcons.send,
-                      height: 20,
-                      width: 20,
-                      color: AppColors.third,
+                    InkWell(
+                      borderRadius: BorderRadius.circular(99),
+                      onTap: () {
+                        setState(() {
+                          data.add(
+                            Message(
+                              text: messageController.text,
+                              timeStamp: DateTime.now(),
+                            ),
+                          );
+                        });
+                      },
+                      child: Svg(
+                        asset: AppIcons.send,
+                        height: 20,
+                        width: 20,
+                        color: AppColors.third,
+                      ),
                     ),
                   ],
                 ),
