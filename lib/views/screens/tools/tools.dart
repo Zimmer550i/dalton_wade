@@ -27,7 +27,9 @@ class Tools extends StatelessWidget {
         label: "BoldTrail",
       ),
       BoxIconData(
-          assetPath: AppIcons.team, label: "Dotloop", link: "https://www.dotloop.com/"),
+          assetPath: AppIcons.team,
+          label: "Dotloop",
+          link: "https://www.dotloop.com/"),
       BoxIconData(
         assetPath: AppIcons.team,
         label: "Turner Title",
@@ -77,21 +79,35 @@ class Tools extends StatelessWidget {
               (255 * 0.7).toInt(),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 16,
-              vertical: 24,
-            ),
-            child: GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: 1.1,
+          Positioned.fill(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 16,
               ),
-              shrinkWrap: true,
-              itemCount: data.length,
-              itemBuilder: (context, index) {
-                return BoxIcon(data: data[index]);
-              },
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    const SizedBox(
+                      height: 24,
+                    ),
+                    GridView.builder(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        childAspectRatio: 1.1,
+                      ),
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      itemCount: data.length,
+                      itemBuilder: (context, index) {
+                        return BoxIcon(data: data[index]);
+                      },
+                    ),
+                    const SizedBox(
+                      height: 24,
+                    ),
+                  ],
+                ),
+              ),
             ),
           ),
         ],

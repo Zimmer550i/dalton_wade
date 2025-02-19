@@ -3,10 +3,13 @@ import 'package:dalton_wade/utils/app_icons.dart';
 import 'package:dalton_wade/utils/style.dart';
 import 'package:dalton_wade/views/base/svg.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class TrainingVideos extends StatelessWidget {
+  final String? watchNowUrl;
   const TrainingVideos({
     super.key,
+    this.watchNowUrl,
   });
 
   @override
@@ -69,19 +72,26 @@ class TrainingVideos extends StatelessWidget {
                       ),
                     ),
                     Expanded(
-                      child: Container(
-                        height: 36,
-                        decoration: BoxDecoration(
-                          color: AppColors.secondary,
-                          borderRadius: BorderRadius.circular(50),
-                        ),
-                        child: Center(
-                          child: Text(
-                            "Watch Now",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 10,
-                              color: Colors.white,
+                      child: GestureDetector(
+                        onTap: () {
+                          launchUrl(
+                            Uri.parse("https://www.youtube.com"),
+                          );
+                        },
+                        child: Container(
+                          height: 36,
+                          decoration: BoxDecoration(
+                            color: AppColors.secondary,
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          child: Center(
+                            child: Text(
+                              "Watch Now",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 10,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                         ),
