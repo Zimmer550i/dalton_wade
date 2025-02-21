@@ -80,8 +80,9 @@ class _CustomExpensionPanelState extends State<CustomExpensionPanel> {
                     duration: const Duration(
                       milliseconds: 300,
                     ),
+                    curve: Curves.easeInOut,
                     child: !isExpanded
-                        ? SizedBox.shrink()
+                        ? SizedBox(height: 0, width: double.infinity,)
                         : Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
