@@ -20,6 +20,7 @@ void main() async {
     statusBarColor: AppColors.primary,
     statusBarIconBrightness: Brightness.dark,
   ));
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(MyApp(
     languages: _languages,
   ));

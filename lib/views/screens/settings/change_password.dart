@@ -46,9 +46,9 @@ class _ChangePasswordState extends State<ChangePassword> {
               ),
               const SizedBox(height: 12),
               CustomTextField(
-                label: "Previous Password",
+                label: "Current Password",
                 isObscured: true,
-                // warningText: "",
+                warningText: "",
                 controller: prevController,
               ),
               CustomTextField(

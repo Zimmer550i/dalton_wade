@@ -31,7 +31,10 @@ class Profile extends StatelessWidget {
         link: AppRoutes.inbox,
       ),
       BoxIconData(
-          assetPath: AppIcons.commissionPayments, label: "Commission Payments"),
+        assetPath: AppIcons.commissionPayments,
+        label: "Commission Payments",
+        link: AppRoutes.commissions,
+      ),
     ];
 
     return Scaffold(

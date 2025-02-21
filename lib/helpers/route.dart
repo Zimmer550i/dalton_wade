@@ -9,6 +9,7 @@ import 'package:dalton_wade/views/screens/messages/contact_details.dart';
 import 'package:dalton_wade/views/screens/messages/contacts.dart';
 import 'package:dalton_wade/views/screens/messages/inbox.dart';
 import 'package:dalton_wade/views/screens/profile/checkout.dart';
+import 'package:dalton_wade/views/screens/profile/commissions.dart';
 import 'package:dalton_wade/views/screens/profile/confirmation.dart';
 import 'package:dalton_wade/views/screens/profile/edit_profile.dart';
 import 'package:dalton_wade/views/screens/profile/favourite_trainings.dart';
@@ -35,6 +36,7 @@ class AppRoutes {
   static String confirmation = '/confirmation';
   static String myPlan = '/my_plan';
   static String favouriteTrainings = "/favourite_trainings";
+  static String commissions = '/commissions';
 
   static String trainingSessions = "/training_sessions";
   static String support = '/support';
@@ -62,6 +64,7 @@ class AppRoutes {
     GetPage(name: chat, page: () => Chat()),
     GetPage(name: contacts, page: () => Contacts()),
     GetPage(name: viewContact, page: () => ContactDetails()),
+    GetPage(name: commissions, page: ()=> Commissions()),
     GetPage(
       name: checkout,
       page: () => Checkout(),
