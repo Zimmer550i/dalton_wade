@@ -55,7 +55,7 @@ class Home extends StatelessWidget {
                   Expanded(
                     child: categories(
                       AppIcons.user,
-                      "AGENT PROFILE",
+                      "AGENT\nPROFILE",
                       0,
                     ),
                   ),
@@ -69,14 +69,14 @@ class Home extends StatelessWidget {
                   Expanded(
                     child: categories(
                       AppIcons.messges,
-                      "CONTACTS & MESSAGE",
+                      "CONTACTS\n& MESSAGE",
                       3,
                     ),
                   ),
                   Expanded(
                     child: categories(
                       AppIcons.setting,
-                      "YOUR SETTINGS",
+                      "YOUR\nSETTINGS",
                       4,
                     ),
                   ),
@@ -140,11 +140,17 @@ class Home extends StatelessWidget {
             const SizedBox(
               height: 8,
             ),
-            Text(
-              label,
-              textAlign: TextAlign.center,
-              style: AppStyles.smallBold.copyWith(
-                color: AppColors.third,
+            SizedBox(
+              height: 32,
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  label,
+                  textAlign: TextAlign.center,
+                  style: AppStyles.smallBold.copyWith(
+                    color: AppColors.third,
+                  ),
+                ),
               ),
             ),
           ],

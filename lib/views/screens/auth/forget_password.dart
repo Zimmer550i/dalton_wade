@@ -24,47 +24,49 @@ class _ForgetPasswordState extends State<ForgetPassword> {
         ),
         child: SingleChildScrollView(
           reverse: true,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const SizedBox(
-                height: 194,
-              ),
-              Image.asset(
-                "assets/images/logo_colored.png",
-                width: 999,
-                fit: BoxFit.fitWidth,
-              ),
-              const SizedBox(
-                height: 40,
-              ),
-              Text(
-                "Forget\npassword?",
-                style: AppStyles.h01.copyWith(
-                  color: AppColors.primary,
-                  height: 1.2,
+          child: SafeArea(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const SizedBox(
+                  height: 194,
                 ),
-              ),
-              const SizedBox(height: 16),
-              Text(
-                "Enter the email address you used when you signed up, and we will send you instructions to reset your password.",
-                style: AppStyles.body1.copyWith(
-                  color: AppColors.third,
+                Image.asset(
+                  "assets/images/logo_colored.png",
+                  width: 999,
+                  fit: BoxFit.fitWidth,
                 ),
-              ),
-              const SizedBox(height: 60),
-              CustomTextField(label: "Email Address"),
-              const SizedBox(
-                height: 40,
-              ),
-              CustomButton(
-                onTap: () {
-                  Get.back();
-                },
-                text: "Request Password Reset",
-              ),
-            ],
+                const SizedBox(
+                  height: 40,
+                ),
+                Text(
+                  "Forget\npassword?",
+                  style: AppStyles.h01.copyWith(
+                    color: AppColors.primary,
+                    height: 1.2,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                Text(
+                  "Enter the email address you used when you signed up, and we will send you instructions to reset your password.",
+                  style: AppStyles.body1.copyWith(
+                    color: AppColors.third,
+                  ),
+                ),
+                const SizedBox(height: 60),
+                CustomTextField(label: "Email Address"),
+                const SizedBox(
+                  height: 40,
+                ),
+                CustomButton(
+                  onTap: () {
+                    Get.back();
+                  },
+                  text: "Request Password Reset",
+                ),
+              ],
+            ),
           ),
         ),
       ),

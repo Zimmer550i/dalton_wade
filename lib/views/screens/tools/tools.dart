@@ -72,7 +72,7 @@ class Tools extends StatelessWidget {
         children: [
           Image.asset(
             "assets/images/bg.jpg",
-            fit: BoxFit.fitHeight,
+            fit: BoxFit.cover,
           ),
           Container(
             color: Colors.white.withAlpha(

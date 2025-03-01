@@ -2,7 +2,9 @@ import 'dart:async';
 
 import 'package:dalton_wade/helpers/route.dart';
 import 'package:dalton_wade/utils/style.dart';
+import 'package:dalton_wade/views/base/svg.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 class Splash extends StatelessWidget {
@@ -16,7 +18,7 @@ class Splash extends StatelessWidget {
         precacheImage(AssetImage('assets/images/card_image.png'), context);
         precacheImage(AssetImage('assets/images/user.png'), context);
         precacheImage(AssetImage('assets/images/logo_white.png'), context);
-        
+
         Timer(const Duration(seconds: 1), () {
           Get.offAllNamed(AppRoutes.login);
         });
@@ -28,10 +30,12 @@ class Splash extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            // SvgPicture.asset(
+            //   "assets/icons/logo_colored.svg",
+            //   width: 999,
+            // ),
             Image.asset(
               "assets/images/logo_colored.png",
-              width: 999,
-              fit: BoxFit.fitWidth,
             ),
             const SizedBox(
               height: 20,

@@ -50,37 +50,40 @@ class Profile extends StatelessWidget {
             size: 80,
           ),
         ),
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "Olivia Wilson",
-              style: AppStyles.h02.copyWith(
-                color: Colors.white,
+        title: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Olivia Wilson",
+                style: AppStyles.h02.copyWith(
+                  color: Colors.white,
+                ),
               ),
-            ),
-            const SizedBox(
-              height: 4,
-            ),
-            Text(
-              "email@reallygreatsite.com",
-              style: AppStyles.body2.copyWith(
-                color: AppColors.white2,
+              const SizedBox(
+                height: 4,
               ),
-            ),
-            Text(
-              "555-555-5555",
-              style: AppStyles.body2.copyWith(
-                color: AppColors.white2,
+              Text(
+                "email@reallygreatsite.com",
+                style: AppStyles.body2.copyWith(
+                  color: AppColors.white2,
+                ),
               ),
-            ),
-            Text(
-              "Services Area(s): Tampa, EL",
-              style: AppStyles.body2.copyWith(
-                color: AppColors.white2,
+              Text(
+                "555-555-5555",
+                style: AppStyles.body2.copyWith(
+                  color: AppColors.white2,
+                ),
               ),
-            ),
-          ],
+              Text(
+                "Services Area(s): Tampa, EL",
+                style: AppStyles.body2.copyWith(
+                  color: AppColors.white2,
+                ),
+              ),
+            ],
+          ),
         ),
         actions: [
           GestureDetector(
@@ -107,7 +110,7 @@ class Profile extends StatelessWidget {
         children: [
           Image.asset(
             "assets/images/bg.jpg",
-            fit: BoxFit.fitHeight,
+            fit: BoxFit.cover,
           ),
           Container(
             color: Colors.white.withAlpha(

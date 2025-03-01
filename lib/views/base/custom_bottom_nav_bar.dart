@@ -50,27 +50,30 @@ class CustomBottomNavBar extends StatelessWidget {
         }
       },
       behavior: HitTestBehavior.translucent,
-      child: SizedBox(
-        // width: 64,
-        height: 48,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Svg(
-              asset: asset,
-              color: index == position ? AppColors.primary : AppColors.third,
-            ),
-            const SizedBox(
-              height: 4,
-            ),
-            Text(
-              label,
-              style: AppStyles.body2Bold.copyWith(
+      child: FittedBox(
+        fit: BoxFit.scaleDown,
+        child: SizedBox(
+          // width: 64,
+          height: 48,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Svg(
+                asset: asset,
                 color: index == position ? AppColors.primary : AppColors.third,
               ),
-            ),
-          ],
+              const SizedBox(
+                height: 4,
+              ),
+              Text(
+                label,
+                style: AppStyles.body2Bold.copyWith(
+                  color: index == position ? AppColors.primary : AppColors.third,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

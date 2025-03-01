@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 class AppStyles {
   static TextStyle h01 = TextStyle(
     fontFamily: "PlayfairDisplay",
-    fontWeight: FontWeight.w700,
+    fontVariations: [FontVariation("wght", 700)],
     fontStyle: FontStyle.italic,
     color: AppColors.textColor,
     fontSize: 42,
@@ -12,7 +12,7 @@ class AppStyles {
 
   static TextStyle h02 = TextStyle(
     fontFamily: "PlayfairDisplay",
-    fontWeight: FontWeight.w700,
+    fontVariations: [FontVariation("wght", 700)],
     fontStyle: FontStyle.italic,
     color: AppColors.textColor,
     fontSize: 30,
@@ -20,28 +20,28 @@ class AppStyles {
 
   static TextStyle h03 = TextStyle(
     fontFamily: "OpenSans",
-    fontWeight: FontWeight.w700,
+    fontVariations: [FontVariation("wght", 700)],
     color: AppColors.textColor,
     fontSize: 24,
   );
 
   static TextStyle h05 = TextStyle(
     fontFamily: "OpenSans",
-    fontWeight: FontWeight.w600,
+    fontVariations: [FontVariation("wght", 600)],
     color: AppColors.dark,
     fontSize: 20,
   );
 
   static TextStyle h06 = TextStyle(
     fontFamily: "OpenSans",
-    fontWeight: FontWeight.w600,
+    fontVariations: [FontVariation("wght", 600)],
     color: AppColors.dark,
     fontSize: 18,
   );
 
   static TextStyle h07 = TextStyle(
     fontFamily: "PlayfairDisplay",
-    fontWeight: FontWeight.w700,
+    fontVariations: [FontVariation("wght", 700)],
     fontStyle: FontStyle.italic,
     fontSize: 24,
   );
@@ -55,7 +55,7 @@ class AppStyles {
 
   static TextStyle body1Bold = TextStyle(
     fontFamily: "OpenSans",
-    fontWeight: FontWeight.w600,
+    fontVariations: [FontVariation("wght", 600)],
     color: AppColors.textColor,
     fontSize: 16,
   );
@@ -68,7 +68,7 @@ class AppStyles {
 
   static TextStyle body2Bold = TextStyle(
     fontFamily: "OpenSans",
-    fontWeight: FontWeight.w600,
+    fontVariations: [FontVariation("wght", 600)],
     color: AppColors.textColor,
     fontSize: 14,
   );
@@ -81,7 +81,7 @@ class AppStyles {
 
   static TextStyle smallBold = TextStyle(
     fontFamily: "OpenSans",
-    fontWeight: FontWeight.w600,
+    fontVariations: [FontVariation("wght", 600)],
     color: AppColors.textColor,
     fontSize: 12,
   );
