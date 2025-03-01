@@ -50,11 +50,11 @@ class UpgradePlan extends StatelessWidget {
               const SizedBox(height: 12),
               Text(" • 100% Commission",
                   style: AppStyles.body1.copyWith(color: AppColors.third)),
-              Text(" • Dedicated Support Line 7 Days A Week",
+              Text(" • Dedicated Support Line 6 Days A Week",
                   style: AppStyles.body1.copyWith(color: AppColors.third)),
               Text(" • Dotloop Transaction Management",
                   style: AppStyles.body1.copyWith(color: AppColors.third)),
-              Text(" • BoomTown Website & Agent CRM",
+              Text(" • BoldTrail Website & Agent CRM",
                   style: AppStyles.body1.copyWith(color: AppColors.third)),
               Text(" • Initial & Ongoing Training",
                   style: AppStyles.body1.copyWith(color: AppColors.third)),
@@ -63,8 +63,6 @@ class UpgradePlan extends StatelessWidget {
               Text(" • DW “Social”",
                   style: AppStyles.body1.copyWith(color: AppColors.third)),
               Text(" • DW “List Boost”",
-                  style: AppStyles.body1.copyWith(color: AppColors.third)),
-              Text(" • Zillow Leads",
                   style: AppStyles.body1.copyWith(color: AppColors.third)),
               Text(" • Prime Street Leads",
                   style: AppStyles.body1.copyWith(color: AppColors.third)),
@@ -121,7 +119,11 @@ class UpgradePlan extends StatelessWidget {
           const SizedBox(height: 16),
           GestureDetector(
             onTap: () {
-              Get.toNamed(AppRoutes.checkout);
+              if (name == "No Monthly Fees") {
+                Get.toNamed(AppRoutes.confirmation);
+              } else {
+                Get.toNamed(AppRoutes.checkout);
+              }
             },
             child: Row(
               spacing: 8,

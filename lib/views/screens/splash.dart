@@ -1,10 +1,7 @@
 import 'dart:async';
-
 import 'package:dalton_wade/helpers/route.dart';
 import 'package:dalton_wade/utils/style.dart';
-import 'package:dalton_wade/views/base/svg.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 class Splash extends StatelessWidget {

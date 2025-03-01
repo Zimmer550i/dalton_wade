@@ -29,7 +29,7 @@ class Confirmation extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               Text(
-                "Your order has been processed. Please check lyou email for receipt.",
+                "Your order has been processed. Please check your email for receipt.",
                 style: AppStyles.body2.copyWith(
                   color: AppColors.third,
                 ),
