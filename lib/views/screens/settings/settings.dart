@@ -8,9 +8,14 @@ import 'package:dalton_wade/views/base/svg.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 
-class Settings extends StatelessWidget {
+class Settings extends StatefulWidget {
   const Settings({super.key});
 
+  @override
+  State<Settings> createState() => _SettingsState();
+}
+
+class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,9 +66,27 @@ class Settings extends StatelessWidget {
             section(
               "Information",
               children: [
-                settingOptions("About App", AppIcons.aboutApp),
-                settingOptions("Privacy Policy", AppIcons.privacy),
-                settingOptions("Terms & Conditions", AppIcons.terms),
+                settingOptions(
+                  "About App",
+                  AppIcons.aboutApp,
+                  onTap: (p0) {
+                    recordBuffer(context, "1");
+                  },
+                ),
+                settingOptions(
+                  "Privacy Policy",
+                  AppIcons.privacy,
+                  onTap: (p0) {
+                    recordBuffer(context, "2");
+                  },
+                ),
+                settingOptions(
+                  "Terms & Conditions",
+                  AppIcons.terms,
+                  onTap: (p0) {
+                    recordBuffer(context, "3");
+                  },
+                ),
               ],
             ),
           ],
@@ -110,6 +133,7 @@ class Settings extends StatelessWidget {
     String iconPath, {
     String? nextRoute,
     String? subTitle,
+    Function(BuildContext)? onTap,
     Function(bool)? switchCallback,
   }) {
     return InkWell(
@@ -120,6 +144,10 @@ class Settings extends StatelessWidget {
           } catch (e) {
             debugPrint(e.toString());
           }
+        }
+
+        if (onTap != null) {
+          onTap(context);
         }
       },
       child: Container(
@@ -183,5 +211,61 @@ class Settings extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  String buffer = "";
+
+  String pass = "23123";
+
+  void recordBuffer(BuildContext context, String s) {
+    if (buffer.length == pass.length) {
+      buffer = buffer.substring(1) + s;
+    } else {
+      buffer += s;
+    }
+
+    if (buffer == pass) {
+      showDialog(
+          context: context,
+          builder: (context) {
+            return GestureDetector(
+              onTap: () {
+                Get.back();
+              },
+              child: AlertDialog(
+                backgroundColor: AppColors.white,
+                title: Text(
+                  "Developers",
+                  style: AppStyles.h07.copyWith(color: AppColors.primary),
+                ),
+                content: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Md. Wasiul Islam",
+                      style: AppStyles.body1Bold,
+                    ),
+                    Text(
+                      "Flutter App Developer @JVAI",
+                      style: AppStyles.small,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      "Piklu Nath",
+                      style: AppStyles.body1Bold,
+                    ),
+                    Text(
+                      "UI/UX Designer @JVAI",
+                      style: AppStyles.small,
+                    ),
+                  ],
+                ),
+              ),
+            );
+          });
+    }
   }
 }
