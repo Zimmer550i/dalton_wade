@@ -23,7 +23,7 @@ class FavouriteTrainings extends StatelessWidget {
             children: [
               const SizedBox(height: 16),
               Text(
-                "Favourite Training Sessions",
+                "Favorite Training Sessions",
                 style: AppStyles.h07.copyWith(
                   color: AppColors.primary,
                 ),

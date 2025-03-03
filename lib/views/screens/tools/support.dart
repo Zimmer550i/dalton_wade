@@ -1,10 +1,9 @@
-import 'package:dalton_wade/helpers/route.dart';
 import 'package:dalton_wade/models/box_icon_data.dart';
 import 'package:dalton_wade/utils/app_colors.dart';
 import 'package:dalton_wade/utils/app_icons.dart';
 import 'package:dalton_wade/utils/style.dart';
-import 'package:dalton_wade/views/base/box_icon.dart';
 import 'package:dalton_wade/views/base/custom_app_bar.dart';
+import 'package:dalton_wade/views/base/grid_box.dart';
 import 'package:flutter/material.dart';
 
 class Support extends StatelessWidget {
@@ -20,7 +19,8 @@ class Support extends StatelessWidget {
       BoxIconData(
         assetPath: AppIcons.idea,
         label: "Visit Knowledge Guide",
-        link: AppRoutes.knowledgeGuide,
+        // link: AppRoutes.knowledgeGuide,
+        link: "https://daltonwade.zohodesk.com/portal/en/kb"
       ),
       BoxIconData(
         assetPath: AppIcons.call,
@@ -56,19 +56,7 @@ class Support extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16),
-              GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                ),
-                shrinkWrap: true,
-                itemCount: data.length,
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: EdgeInsets.only(left: (index % 2 != 0) ? 4 : 0),
-                    child: BoxIcon(data: data[index]),
-                  );
-                },
-              ),
+              GridBox(data: data),
             ],
           ),
         ),

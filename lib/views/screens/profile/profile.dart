@@ -3,7 +3,7 @@ import 'package:dalton_wade/models/box_icon_data.dart';
 import 'package:dalton_wade/utils/app_colors.dart';
 import 'package:dalton_wade/utils/app_icons.dart';
 import 'package:dalton_wade/utils/style.dart';
-import 'package:dalton_wade/views/base/box_icon.dart';
+import 'package:dalton_wade/views/base/grid_box.dart';
 import 'package:dalton_wade/views/base/svg.dart';
 import 'package:dalton_wade/views/base/user_avatar.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +22,7 @@ class Profile extends StatelessWidget {
       ),
       BoxIconData(
         assetPath: AppIcons.traning,
-        label: "Favourite Tranings",
+        label: "Favorite Tranings",
         link: AppRoutes.favouriteTrainings,
       ),
       BoxIconData(
@@ -122,14 +122,7 @@ class Profile extends StatelessWidget {
               horizontal: 16,
               vertical: 24,
             ),
-            child: GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, childAspectRatio: 1.1),
-              itemCount: data.length,
-              itemBuilder: (context, index) {
-                return BoxIcon(data: data[index]);
-              },
-            ),
+            child: GridBox(data: data),
           ),
         ],
       ),

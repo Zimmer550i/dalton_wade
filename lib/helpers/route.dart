@@ -112,20 +112,23 @@ class AppRoutes {
           BoxIconData(
             assetPath: AppIcons.call,
             label: "Call",
-            link: "tel:+1800229933",
+            link: "tel:(727) 914-4590",
           ),
           BoxIconData(
             assetPath: AppIcons.email,
             label: "Email",
-            link: "mailto:wasiul0491@gmail.com",
+            link: "mailto:info@turnertitle.com",
           ),
           BoxIconData(
             assetPath: AppIcons.website,
             label: "Visit Website",
+            link: "https://turnertitle.com/",
           ),
           BoxIconData(
             assetPath: AppIcons.downloadApp,
             label: "Download turner Title Prospector",
+            appStore: "https://apps.apple.com/us/app/turner-prospector/id1639063589",
+            playStore: "https://play.google.com/store/apps/details?id=com.newhomepage.turner&hl=en_US",
           ),
         ],
       ),
@@ -140,16 +143,17 @@ class AppRoutes {
           BoxIconData(
             assetPath: AppIcons.call,
             label: "Call",
-            link: "tel:+1800229933",
+            link: "tel:(813) 300-9281",
           ),
           BoxIconData(
             assetPath: AppIcons.email,
             label: "Email",
-            link: "mailto:wasiul0491@gmail.com",
+            link: "mailto:courtland@pmfmortgage.com",
           ),
           BoxIconData(
             assetPath: AppIcons.website,
             label: "Visit Website",
+            link: "https://www.courtlandhunt.com/",
           ),
         ],
       ),
@@ -164,16 +168,17 @@ class AppRoutes {
           BoxIconData(
             assetPath: AppIcons.call,
             label: "Call",
-            link: "tel:+1800229933",
+            link: "tel:800-628-7596",
           ),
           BoxIconData(
             assetPath: AppIcons.email,
             label: "Email",
-            link: "mailto:wasiul0491@gmail.com",
+            link: "mailto:fmaciel@mimutual.com",
           ),
           BoxIconData(
             assetPath: AppIcons.website,
             label: "Visit Website",
+            link: "https://mimutual.com/branches/west-shore-florida/"
           ),
         ],
       ),

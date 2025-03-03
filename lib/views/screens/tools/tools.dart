@@ -3,7 +3,7 @@ import 'package:dalton_wade/models/box_icon_data.dart';
 import 'package:dalton_wade/utils/app_colors.dart';
 import 'package:dalton_wade/utils/app_icons.dart';
 import 'package:dalton_wade/utils/style.dart';
-import 'package:dalton_wade/views/base/box_icon.dart';
+import 'package:dalton_wade/views/base/grid_box.dart';
 import 'package:flutter/material.dart';
 
 class Tools extends StatelessWidget {
@@ -25,11 +25,17 @@ class Tools extends StatelessWidget {
       BoxIconData(
         assetPath: AppIcons.team,
         label: "BoldTrail",
+        playStore:
+            "https://play.google.com/store/apps/details?id=com.insiderealestate.boldtrail&hl=en_US",
+        appStore: "https://apps.apple.com/us/app/boldtrail/id6502782766",
       ),
       BoxIconData(
-          assetPath: AppIcons.team,
-          label: "Dotloop",
-          link: "https://www.dotloop.com/"),
+        assetPath: AppIcons.team,
+        label: "Dotloop",
+        playStore:
+            "https://play.google.com/store/apps/details?id=com.dotloop.mobile&hl=en_US",
+        appStore: "https://apps.apple.com/us/app/dotloop/id605565510",
+      ),
       BoxIconData(
         assetPath: AppIcons.team,
         label: "Turner Title",
@@ -43,15 +49,22 @@ class Tools extends StatelessWidget {
       BoxIconData(
         assetPath: AppIcons.team,
         label: "FSBOs",
+        link:
+            "https://joindaltonwade.com/open-house-connect-redx/florida-open-house-connect-redx-lists/",
       ),
       BoxIconData(
-        assetPath: AppIcons.team,
-        label: "Open House List",
-      ),
+          assetPath: AppIcons.team,
+          label: "Open House List",
+          link: "https://joindaltonwade.com/open-house-connect-redx/"),
       BoxIconData(
         assetPath: AppIcons.team,
         label: "MiMutual Mortgage",
         link: AppRoutes.miMitualMortgage,
+      ),
+      BoxIconData(
+        assetPath: AppIcons.team,
+        label: "Facebook Group",
+        link: "https://www.facebook.com/groups/dwagents",
       ),
     ];
     return Scaffold(
@@ -90,18 +103,7 @@ class Tools extends StatelessWidget {
                     const SizedBox(
                       height: 24,
                     ),
-                    GridView.builder(
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        childAspectRatio: 1.1,
-                      ),
-                      shrinkWrap: true,
-                      physics: NeverScrollableScrollPhysics(),
-                      itemCount: data.length,
-                      itemBuilder: (context, index) {
-                        return BoxIcon(data: data[index]);
-                      },
-                    ),
+                    GridBox(data: data),
                     const SizedBox(
                       height: 24,
                     ),

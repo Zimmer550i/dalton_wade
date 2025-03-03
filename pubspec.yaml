@@ -18,6 +18,7 @@ dependencies:
   flutter_svg: ^2.0.17
   flutter_spinkit: ^5.2.1
   url_launcher: ^6.3.1
+  auto_size_text: ^3.0.0
 
 dev_dependencies:
   flutter_test:

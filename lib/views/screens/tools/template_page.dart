@@ -1,8 +1,8 @@
 import 'package:dalton_wade/models/box_icon_data.dart';
 import 'package:dalton_wade/utils/app_colors.dart';
 import 'package:dalton_wade/utils/style.dart';
-import 'package:dalton_wade/views/base/box_icon.dart';
 import 'package:dalton_wade/views/base/custom_app_bar.dart';
+import 'package:dalton_wade/views/base/grid_box.dart';
 import 'package:flutter/material.dart';
 
 class TemplatePage extends StatelessWidget {
@@ -46,19 +46,7 @@ class TemplatePage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16),
-              GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                ),
-                shrinkWrap: true,
-                itemCount: data.length,
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: EdgeInsets.only(left: (index % 2 != 0) ? 4 : 0),
-                    child: BoxIcon(data: data[index]),
-                  );
-                },
-              ),
+              GridBox(data: data),
             ],
           ),
         ),
