@@ -29,7 +29,7 @@ class BoxIcon extends StatelessWidget {
         }
         if (Platform.isIOS && data.appStore != null) {
           launchUrl(Uri.parse(data.appStore!),
-          mode: LaunchMode.externalNonBrowserApplication);
+              mode: LaunchMode.externalNonBrowserApplication);
         }
 
         if (data.link != null) {
@@ -90,12 +90,20 @@ class BoxIcon extends StatelessWidget {
               height: 124,
               width: 124,
               color: AppColors.secondary,
-              child: Svg(
-                asset: data.assetPath,
-                height: 64,
-                width: 64,
-                color: Colors.white,
-              ),
+              child: data.assetPath.contains(".svg")
+                  ? Svg(
+                      asset: data.assetPath,
+                      height: 64,
+                      width: 64,
+                      color: Colors.white,
+                    )
+                  : Center(
+                    child: Image.asset(
+                        data.assetPath,
+                        height: 90,
+                        width: 90,
+                      ),
+                  ),
             ),
             const SizedBox(
               height: 8,

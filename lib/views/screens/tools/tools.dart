@@ -23,41 +23,41 @@ class Tools extends StatelessWidget {
         link: AppRoutes.support,
       ),
       BoxIconData(
-        assetPath: AppIcons.team,
+        assetPath: "assets/images/bold_trial.png",
         label: "BoldTrail",
         playStore:
             "https://play.google.com/store/apps/details?id=com.insiderealestate.boldtrail&hl=en_US",
         appStore: "https://apps.apple.com/us/app/boldtrail/id6502782766",
       ),
       BoxIconData(
-        assetPath: AppIcons.team,
+        assetPath: "assets/images/dotloop.png",
         label: "Dotloop",
         playStore:
             "https://play.google.com/store/apps/details?id=com.dotloop.mobile&hl=en_US",
         appStore: "https://apps.apple.com/us/app/dotloop/id605565510",
       ),
       BoxIconData(
-        assetPath: AppIcons.team,
+        assetPath: "assets/images/TurnerTitle.png",
         label: "Turner Title",
         link: AppRoutes.turnerTitle,
       ),
       BoxIconData(
-        assetPath: AppIcons.team,
+        assetPath: "assets/images/Pioneer.png",
         label: "Pioneer Mortgage Funding Inc.",
         link: AppRoutes.pioneerMortgage,
       ),
       BoxIconData(
-        assetPath: AppIcons.team,
+        assetPath: "assets/images/fsbo.png",
         label: "FSBOs",
         link:
             "https://joindaltonwade.com/open-house-connect-redx/florida-open-house-connect-redx-lists/",
       ),
       BoxIconData(
-          assetPath: AppIcons.team,
+          assetPath: "assets/images/openhouseconnect.png",
           label: "Open House List",
           link: "https://joindaltonwade.com/open-house-connect-redx/"),
       BoxIconData(
-        assetPath: AppIcons.team,
+        assetPath: "assets/images/MiMutual.png",
         label: "MiMutual Mortgage",
         link: AppRoutes.miMitualMortgage,
       ),
