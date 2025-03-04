@@ -28,7 +28,8 @@ class BoxIcon extends StatelessWidget {
           launchUrl(Uri.parse(data.playStore!));
         }
         if (Platform.isIOS && data.appStore != null) {
-          launchUrl(Uri.parse(data.appStore!));
+          launchUrl(Uri.parse(data.appStore!),
+          mode: LaunchMode.externalNonBrowserApplication);
         }
 
         if (data.link != null) {
@@ -39,7 +40,7 @@ class BoxIcon extends StatelessWidget {
           }
         }
 
-        if (data.link != null) {
+        if (data.link == null) {
           if (Platform.isAndroid && data.playStore == null) {
             ScaffoldMessenger.of(context).hideCurrentSnackBar();
             ScaffoldMessenger.of(context).showSnackBar(
@@ -78,8 +79,6 @@ class BoxIcon extends StatelessWidget {
               ),
             );
           }
-
-
         }
       },
       child: SizedBox(

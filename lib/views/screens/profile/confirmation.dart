@@ -1,3 +1,4 @@
+import 'package:dalton_wade/helpers/route.dart';
 import 'package:dalton_wade/utils/app_colors.dart';
 import 'package:dalton_wade/utils/style.dart';
 import 'package:dalton_wade/views/base/custom_app_bar.dart';
@@ -38,10 +39,7 @@ class Confirmation extends StatelessWidget {
               CustomButton(
                 text: "Back to Profile",
                 onTap: () {
-                  Get.back();
-                  Get.back();
-                  Get.back();
-                  Get.back();
+                  Get.until((route)=>Get.currentRoute == AppRoutes.app);
                 },
               ),
             ],

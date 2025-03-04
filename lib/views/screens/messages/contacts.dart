@@ -19,7 +19,10 @@ class _ContactsState extends State<Contacts> {
   Map<String, double> positions = {};
   ScrollController controller = ScrollController();
   late List<Contact> data;
+  List<Contact> filteredData = [];
   late List<Widget> contacts;
+  bool isSearching = false;
+  TextEditingController searchController = TextEditingController();
 
   double fingerStart = 0;
   double fingerTravel = 0;
@@ -54,6 +57,7 @@ class _ContactsState extends State<Contacts> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: CustomAppBar(),
       body: Padding(
         padding: EdgeInsets.only(
@@ -72,42 +76,96 @@ class _ContactsState extends State<Contacts> {
                     ),
                   ),
                   const Spacer(),
-                  Container(
-                    height: 40,
-                    width: 40,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(
-                        color: Color(
-                          0xffEBEDE0,
+                  if (!isSearching)
+                    InkWell(
+                      borderRadius: BorderRadius.circular(99),
+                      onTap: () {
+                        setState(() {
+                          isSearching = !isSearching;
+                        });
+                      },
+                      child: Container(
+                        height: 40,
+                        width: 40,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: Color(
+                              0xffEBEDE0,
+                            ),
+                          ),
+                        ),
+                        child: Svg(
+                          asset: AppIcons.search,
                         ),
                       ),
                     ),
-                    child: Svg(
-                      asset: AppIcons.search,
-                    ),
-                  ),
                   const SizedBox(
                     width: 20,
                   ),
                 ],
               ),
             ),
+            if (isSearching)
+              Padding(
+                padding: const EdgeInsets.only(
+                  right: 16,
+                ),
+                child: TextField(
+                  autofocus: true,
+                  controller: searchController,
+                  onChanged: (value) {
+                    String query = value.toLowerCase();
+                    setState(() {
+                      filteredData = data.where((contact) {
+                        return contact.name.toLowerCase().contains(query) ||
+                            contact.phone.toLowerCase().contains(query);
+                      }).toList();
+                      contacts = getData(filteredData);
+                    });
+                  },
+                  decoration: InputDecoration(
+                    contentPadding: EdgeInsets.all(0),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(99),
+                    ),
+                    hintText: "Search",
+                    prefixIcon: Icon(Icons.search),
+                    suffixIcon: InkWell(
+                      borderRadius: BorderRadius.circular(99),
+                      onTap: () {
+                        setState(() {
+                          contacts = getData(data);
+                          searchController.text = "";
+                          isSearching = false;
+                        });
+                      },
+                      child: Icon(
+                        Icons.close,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             Expanded(
               child: Row(
                 children: [
                   Expanded(
-                    child: SingleChildScrollView(
-                      controller: controller,
-                      child: Column(
-                        children: [
-                          ...contacts,
-                          SafeArea(
-                            child: const SizedBox(
-                              height: 20,
+                    child: Align(
+                      alignment: Alignment.topCenter,
+                      child: SingleChildScrollView(
+                        controller: controller,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            ...contacts,
+                            SafeArea(
+                              child: const SizedBox(
+                                height: 20,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -127,8 +185,7 @@ class _ContactsState extends State<Contacts> {
                                         if (positions.containsKey(
                                             String.fromCharCode(i))) {
                                           controller.animateTo(
-                                            positions[
-                                                    String.fromCharCode(i)]!
+                                            positions[String.fromCharCode(i)]!
                                                 .toDouble(),
                                             duration: const Duration(
                                               milliseconds: 300,
@@ -144,8 +201,7 @@ class _ContactsState extends State<Contacts> {
                                             String.fromCharCode(i),
                                             style: TextStyle(
                                               fontFamily: "OpenSans",
-                                              fontSize:
-                                                  index == i ? 22 : 14,
+                                              fontSize: index == i ? 22 : 14,
                                               fontWeight: index == i
                                                   ? FontWeight.bold
                                                   : FontWeight.w400,
@@ -233,7 +289,7 @@ class _ContactsState extends State<Contacts> {
       rtn.add(
         InkWell(
           onTap: () {
-            Get.to(ContactDetails());
+            Get.to(()=>ContactDetails());
           },
           child: Container(
             height: 80,
