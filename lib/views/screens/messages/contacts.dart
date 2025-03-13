@@ -124,7 +124,6 @@ class _ContactsState extends State<Contacts> {
                       contacts = getData(filteredData);
                     });
                   },
-                  obscureText: true,
                   decoration: InputDecoration(
                     contentPadding: EdgeInsets.all(0),
                     border: OutlineInputBorder(
